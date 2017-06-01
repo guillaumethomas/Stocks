@@ -25,18 +25,17 @@ def total_value(stock_list):
 
 def portfolio_string(stock_list):
     stock_list = total_value(stock_list)
-
-    text = "\nTotal value of the portfolio is %s" %(stock_list[-1]['total_value'])
-
     stock_only = stock_list[0:-1]
+
     intro = "Today %s\n" %(date.today())
     indiv_val = "\n | CODE | PRICE | QTY | TOTAL VALUE |\n"
+    Summary = "\nTotal value of the portfolio is %s" % (stock_list[-1]['total_value'])
 
     for i in stock_only:
         stock_sentence = "| %s | %s |  %s |  %s | \n" % (i['code'], i['price'], i['qty'], i['total_val'])
         indiv_val += stock_sentence
 
-    text = intro + indiv_val + text
+    text = intro + indiv_val + Summary
 
     return text
 

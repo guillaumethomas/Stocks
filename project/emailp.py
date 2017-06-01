@@ -5,8 +5,8 @@ import smtplib
 from getpass import getpass
 from email.message import EmailMessage
 from portfolio import portfolio
-from stock_calc import total_value
-
+from stock_calc import portfolio_string
+from datetime import date
 
 
 def main():
@@ -17,9 +17,10 @@ def main():
     gmail_password = getpass('Password ?\n')
 
     to = ["guillaumethomas@outlook.com"]
-    subject = "Git Stocks"
-    content = total_value(portfolio())
-    print(content)
+    subject = "Portfolio Summary %s" %(date.today())
+    content = portfolio_string(portfolio())
+
+
 
     server = connection_server(gmail_user,gmail_password)
 

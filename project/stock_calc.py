@@ -20,7 +20,7 @@ def total_value(stock_list):
     stock_list = stocks_dict(stock_list)
     for s in stock_list:
         total += s['total_val']
-    stock_list.append(dict(total_value=total))
+    stock_list.append(dict(total_value=round(total,3)))
     return stock_list
 
 def portfolio_string(stock_list):

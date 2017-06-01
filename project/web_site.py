@@ -12,9 +12,9 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     a = jsonify(total_value(portfolio()))
-    #a = portfolio_string(portfolio())
+    b = portfolio_string(portfolio())
     #print(a)
-    return a
+    return a, b
 
 
 if __name__ == '__main__':
